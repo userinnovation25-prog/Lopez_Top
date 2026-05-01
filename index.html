@@ -93,56 +93,27 @@
       <h2>NUESTROS <span>SERVICIOS</span></h2>
       <p class="subtitle">Soluciones de Alta Precisión</p>
 
-      <div class="cards">
-        <div class="card terrestre scroll-reveal reveal-slide-up" data-delay="0s">
-          <h3>Topografía Terrestre</h3>
-        </div>
-        <div class="card card-3D scroll-reveal reveal-slide-up" data-delay="0.1s">
-          <h3>Escaneo Láser 3D</h3>
-        </div>
-        <div class="card drone scroll-reveal reveal-slide-up" data-delay="0.2s">
-          <h3>Fotogrametría con Drones</h3>
-        </div>
-      </div>
-
-      <div class="services-detail">
-        <div class="service-group scroll-reveal reveal-fade-in">
-          <h3>Fotogrametría con Drones</h3>
-          <p>Capturamos imágenes de alta resolución desde perspectivas aéreas, generando modelos tridimensionales precisos. Ideal para levantamientos topográficos, inspección de infraestructuras y documentación visual de proyectos. Con drones equipados con cámaras multiespectrales, obtenemos datos geoespaciales de alta exactitud para análisis detallados.</p>
-        </div>
-
-        <div class="service-group scroll-reveal reveal-fade-in">
-          <h3>Topografía Terrestre</h3>
-          <div class="service-subgroup">
-            <h4>Infraestructura Vial</h4>
-            <p>Mediciones precisas para diseño, construcción y mantenimiento de carreteras, vías secundarias y accesos. Capturamos perfiles transversales, longitudinales y modelamos superficies para optimizar proyectos de infraestructura vial.</p>
-          </div>
-          <div class="service-subgroup">
-            <h4>Actualización y Certificado de Áreas</h4>
-            <p>Levantamientos topográficos actualizados para certificación de terrenos y propiedades. Generamos planos con precisión legal que cumplen normas técnicas, facilitando transacciones inmobiliarias y trámites ante autoridades.</p>
-          </div>
-          <div class="service-subgroup">
-            <h4>Parcelaciones</h4>
-            <p>Diseño y levantamiento de proyectos de parcelación. Realizamos estudios topográficos completos para divisiones de terreno, asegurando cumplimiento normativo y precisión en todos los linderos.</p>
-          </div>
-        </div>
-
-        <div class="service-group scroll-reveal reveal-fade-in">
-          <h3>Escaneo Láser 3D</h3>
-          <p>Tecnología LiDAR de última generación para capturar geometría completa de estructuras, edificios y terrenos. Generamos nubes de puntos de altísima densidad que permiten análisis detallados, modelado BIM y documentación precisa de activos. Perfecto para relevamientos de edificios históricos, inspección de infraestructuras críticas y análisis volumétricos.</p>
-        </div>
-
-        <div class="service-group scroll-reveal reveal-fade-in">
-          <h3>Construcción Civil</h3>
-          <p>Apoyo topográfico integral para proyectos constructivos. Desde replanteo de estructuras hasta control de ejecución, proporcionamos servicios de precisión que garantizan cumplimiento de especificaciones y documentación actualizada del avance de obra.</p>
-        </div>
-
-        <div class="service-group scroll-reveal reveal-fade-in">
-          <h3>Servicios de Seguridad y Salud en el Trabajo (SST)</h3>
-          <p>Asesoría y soporte en aspectos topográficos relacionados con seguridad industrial y salud ocupacional. Evaluación de terrenos, identificación de riesgos geográficos y documentación de condiciones del sitio para asegurar ambientes de trabajo seguros.</p>
-        </div>
-      </div>
+      <div class="services-grid" id="servicesGrid" aria-label="Listado de servicios"></div>
     </section>
+
+    <div class="service-modal" id="serviceModal" aria-hidden="true" inert>
+      <div class="service-modal__overlay" data-modal-close></div>
+      <section
+        class="service-modal__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="serviceModalTitle"
+        aria-describedby="serviceModalContent"
+        tabindex="-1"
+      >
+        <button class="service-modal__close" type="button" aria-label="Cerrar modal" data-modal-close>
+          <i class="fas fa-xmark" aria-hidden="true"></i>
+        </button>
+        <p class="service-modal__eyebrow">Servicio</p>
+        <h3 id="serviceModalTitle"></h3>
+        <div class="service-modal__content" id="serviceModalContent"></div>
+      </section>
+    </div>
 
      <section id="nosotros" class="nosotros">
       <div class="nosotros-content">
@@ -205,5 +176,6 @@
     <script src="js/button_burguer.js"></script>
     <script src="js/cursor.js"></script>
     <script src="js/scroll-reveal.js"></script>
+    <script src="js/services.js"></script>
   </body>
 </html>

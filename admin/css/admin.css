@@ -29,7 +29,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: url("/assets/images/hero.jpg") center/cover no-repeat;
+  background: url("../imagen/hero.jpg") center/cover no-repeat;
 }
 
 .login-box {
