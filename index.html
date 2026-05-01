@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
 
     <!-- SEO PRINCIPAL -->
-    <title>LopezTop | Topografía | Drones y Escaneo Láser 3D</title>
+    <title>LopezTop | Topografía | Drones | Ingenieria</title>
     <meta
       name="description"
       content="Empresa de topografía en Medellín especializada en levantamientos topográficos, escaneo láser 3D y fotogrametría con drones. Cotiza tu proyecto hoy mismo."
@@ -17,7 +17,7 @@
     <meta property="og:title" content="Topografía en Medellín | LopezTop" />
     <meta
       property="og:description"
-      content="Servicios profesionales de topografía, escaneo 3D y fotogrametría con drones en Medellín."
+      content="Servicios profesionales de topografía y fotogrametría con drones en Medellín."
     />
     <meta property="og:type" content="website" />
 
@@ -30,6 +30,7 @@
 
     <!-- Estilos -->
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/scroll-reveal.css" />
 
     <!-- Iconos -->
     <link
@@ -43,6 +44,7 @@
       rel="stylesheet"
     />
   </head>
+  <canvas id="cursorCanvas"></canvas>
   <body>
     <header>
       <div class="container nav">
@@ -65,8 +67,10 @@
           <a href="index.html">Inicio</a>
           <a href="#servicios">Servicios</a>
           <a href="#nosotros">Nosotros</a>
+          <a href="">Proyectos</a>
           <a href="contacto.html">Contacto</a>
-          <a href="#contacto" class="btn-nav">Cotiza Ahora</a>
+          <a href="#" onclick="window.open('https://wa.me/573148548624', '_blank'); return false;" class="btn-nav">Cotiza Ahora</a>
+          <a href="admin/login.html" style="font-size: 0.8rem; opacity: 0.6;">Admin</a>
         </nav>
       </div>
     </header>
@@ -84,39 +88,97 @@
       </div>
     </section>
 
-    <section class="services-bar">
-      <div class="bar-container">
-        <div class="bar-item">
-          <h3>Levantamientos Topográficos</h3>
-          <p>Mediciones exactas para todo tipo de proyectos.</p>
-        </div>
-        <div class="bar-item">
-          <h3>Geodesia y GPS</h3>
-          <p>Ubicación y control con tecnología GNSS avanzada.</p>
-        </div>
-        <div class="bar-item">
-          <h3>Modelos 3D y Drones</h3>
-          <p>Mapeo aéreo y modelado en 3D.</p>
-        </div>
-      </div>
-    </section>
-
+      
     <section id="servicios" class="servicios">
       <h2>NUESTROS <span>SERVICIOS</span></h2>
       <p class="subtitle">Soluciones de Alta Precisión</p>
 
       <div class="cards">
-        <div class="card terrestre">
+        <div class="card terrestre scroll-reveal reveal-slide-up" data-delay="0s">
           <h3>Topografía Terrestre</h3>
         </div>
-        <div class="card card-3D">
+        <div class="card card-3D scroll-reveal reveal-slide-up" data-delay="0.1s">
           <h3>Escaneo Láser 3D</h3>
         </div>
-        <div class="card drone">
+        <div class="card drone scroll-reveal reveal-slide-up" data-delay="0.2s">
           <h3>Fotogrametría con Drones</h3>
         </div>
       </div>
+
+      <div class="services-detail">
+        <div class="service-group scroll-reveal reveal-fade-in">
+          <h3>Fotogrametría con Drones</h3>
+          <p>Capturamos imágenes de alta resolución desde perspectivas aéreas, generando modelos tridimensionales precisos. Ideal para levantamientos topográficos, inspección de infraestructuras y documentación visual de proyectos. Con drones equipados con cámaras multiespectrales, obtenemos datos geoespaciales de alta exactitud para análisis detallados.</p>
+        </div>
+
+        <div class="service-group scroll-reveal reveal-fade-in">
+          <h3>Topografía Terrestre</h3>
+          <div class="service-subgroup">
+            <h4>Infraestructura Vial</h4>
+            <p>Mediciones precisas para diseño, construcción y mantenimiento de carreteras, vías secundarias y accesos. Capturamos perfiles transversales, longitudinales y modelamos superficies para optimizar proyectos de infraestructura vial.</p>
+          </div>
+          <div class="service-subgroup">
+            <h4>Actualización y Certificado de Áreas</h4>
+            <p>Levantamientos topográficos actualizados para certificación de terrenos y propiedades. Generamos planos con precisión legal que cumplen normas técnicas, facilitando transacciones inmobiliarias y trámites ante autoridades.</p>
+          </div>
+          <div class="service-subgroup">
+            <h4>Parcelaciones</h4>
+            <p>Diseño y levantamiento de proyectos de parcelación. Realizamos estudios topográficos completos para divisiones de terreno, asegurando cumplimiento normativo y precisión en todos los linderos.</p>
+          </div>
+        </div>
+
+        <div class="service-group scroll-reveal reveal-fade-in">
+          <h3>Escaneo Láser 3D</h3>
+          <p>Tecnología LiDAR de última generación para capturar geometría completa de estructuras, edificios y terrenos. Generamos nubes de puntos de altísima densidad que permiten análisis detallados, modelado BIM y documentación precisa de activos. Perfecto para relevamientos de edificios históricos, inspección de infraestructuras críticas y análisis volumétricos.</p>
+        </div>
+
+        <div class="service-group scroll-reveal reveal-fade-in">
+          <h3>Construcción Civil</h3>
+          <p>Apoyo topográfico integral para proyectos constructivos. Desde replanteo de estructuras hasta control de ejecución, proporcionamos servicios de precisión que garantizan cumplimiento de especificaciones y documentación actualizada del avance de obra.</p>
+        </div>
+
+        <div class="service-group scroll-reveal reveal-fade-in">
+          <h3>Servicios de Seguridad y Salud en el Trabajo (SST)</h3>
+          <p>Asesoría y soporte en aspectos topográficos relacionados con seguridad industrial y salud ocupacional. Evaluación de terrenos, identificación de riesgos geográficos y documentación de condiciones del sitio para asegurar ambientes de trabajo seguros.</p>
+        </div>
+      </div>
     </section>
+
+     <section id="nosotros" class="nosotros">
+      <div class="nosotros-content">
+        <h2>ACERCA DE <span>NOSOTROS</span></h2>
+        <p class="nosotros-intro">En <strong>LOPEZTOP S.A.S.</strong> convertimos la precisión en confianza, combinando tecnología de vanguardia con experiencia profesional para entregar soluciones topográficas que transforman proyectos en realidades.</p>
+
+        <div class="nosotros-text">
+          <p>En <strong>LOPEZTOP S.A.S.</strong> convertimos la precisión en confianza. Somos una empresa especializada en servicios topográficos que respalda proyectos de infraestructura con información exacta, oportuna y confiable.</p>
+
+          <p>Entendemos que cada centímetro cuenta. Por eso trabajamos con tecnología de alta precisión, equipos rigurosamente calibrados y un talento humano calificado que garantiza resultados eficientes desde el primer levantamiento.</p>
+
+          <p>Acompañamos obras civiles, proyectos urbanísticos y desarrollos territoriales cumpliendo estrictamente la normativa colombiana y aplicando criterios de gestión ambiental responsable. Nuestro compromiso no es solo medir terrenos, sino aportar seguridad técnica que optimice tiempos, reduzca riesgos y garantice decisiones acertadas en cada etapa del proyecto.</p>
+
+          <p>En <strong>LOPEZTOP S.A.S.</strong> no solo entregamos datos; entregamos respaldo, exactitud y tranquilidad para que su proyecto avance con firmeza.</p>
+        </div>
+
+        <div class="nosotros-values">
+          <div class="value-item scroll-reveal reveal-slide-up" data-delay="0s">
+            <i class="fas fa-check-circle"></i>
+            <h4>Precisión</h4>
+            <p>Exactitud milimétrica en cada medición</p>
+          </div>
+          <div class="value-item scroll-reveal reveal-slide-up" data-delay="0.1s">
+            <i class="fas fa-tools"></i>
+            <h4>Tecnología</h4>
+            <p>Equipos de última generación</p>
+          </div>
+          <div class="value-item scroll-reveal reveal-slide-up" data-delay="0.2s">
+            <i class="fas fa-handshake"></i>
+            <h4>Confianza</h4>
+            <p>Compromiso con calidad y resultados</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <footer class="main-footer">
       <div class="copy">
@@ -141,5 +203,7 @@
       </div>
     </footer>
     <script src="js/button_burguer.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/scroll-reveal.js"></script>
   </body>
 </html>

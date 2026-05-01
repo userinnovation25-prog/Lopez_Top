@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin LopezTop | Dashboard</title>
+  <link
+      rel="icon"
+      type="image/png"
+      href="/assets/images/lopeztop-removebg-preview.png"
+    />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+  <link rel="stylesheet" href="../css/scroll-reveal.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img
+            src="/assets/images/top2.png"
+            alt="Logo"
+            class="brand-img"
+            href="index.html"
+          />
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#dashboard" class="nav-item active" onclick="cambiarTab('dashboard', event)">
+          <i class="fas fa-chart-line"></i> Dashboard
+        </a>
+        <a href="#contactos" class="nav-item" onclick="cambiarTab('contactos', event)">
+          <i class="fas fa-envelope"></i> Contactos
+        </a>
+        <a href="#usuarios" class="nav-item" onclick="cambiarTab('usuarios', event)">
+          <i class="fas fa-users"></i> Usuarios Pendientes
+        </a>
+        <a href="#controlUsuarios" class="nav-item" onclick="cambiarTab('controlUsuarios', event)">
+          <i class="fas fa-user-shield"></i> Control de Usuarios
+        </a>
+        <a href="#" class="nav-item logout" onclick="cerrarSesion(event)">
+          <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <!-- Header -->
+      <header class="admin-header">
+        <div class="header-content">
+          <h1 id="tabTitulo">Dashboard</h1>
+          <div class="user-info">
+            <span id="usuarioNombre">Usuario</span>
+            <i class="fas fa-user-circle"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Area -->
+      <div class="admin-content">
+        <!-- Dashboard Tab -->
+        <div id="dashboard" class="tab-content active">
+          <div class="stats-container">
+            <div class="stat-card scroll-reveal reveal-slide-up" data-delay="0s">
+              <div class="stat-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="stat-info">
+                <h3>Contactos Pendientes</h3>
+                <p id="statsContactosPendientes">0</p>
+              </div>
+            </div>
+            <div class="stat-card scroll-reveal reveal-slide-up" data-delay="0.1s">
+              <div class="stat-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="stat-info">
+                <h3>Contactos Atendidos</h3>
+                <p id="statsContactosAtendidos">0</p>
+              </div>
+            </div>
+            <div class="stat-card scroll-reveal reveal-slide-up" data-delay="0.2s">
+              <div class="stat-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="stat-info">
+                <h3>Usuarios Pendientes</h3>
+                <p id="statsUsuariosPendientes">0</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="recent-section">
+            <h2>Actividad Reciente</h2>
+            <div id="actividadReciente" class="activity-list"></div>
+          </div>
+        </div>
+
+        <!-- Contactos Tab -->
+        <div id="contactos" class="tab-content">
+          <div class="tab-header">
+            <h2>Gestión de Contactos</h2>
+            <button class="btn-refresh" onclick="cargarContactos()">
+              <i class="fas fa-sync"></i> Actualizar
+            </button>
+          </div>
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Celular</th>
+                  <th>Correo</th>
+                  <th>Mensaje</th>
+                  <th>Estado</th>
+                  <th>Fecha</th>
+                  <th>Acción</th>
+                </tr>
+              </thead>
+              <tbody id="contactosTabla">
+                <tr>
+                  <td colspan="7" class="loading">Cargando...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Usuarios Pendientes Tab -->
+        <div id="usuarios" class="tab-content">
+          <div class="tab-header">
+            <h2>Usuarios Pendientes de Aprobación</h2>
+            <button class="btn-refresh" onclick="cargarUsuariosPendientes()">
+              <i class="fas fa-sync"></i> Actualizar
+            </button>
+          </div>
+          <div id="usuariosContainer" class="usuarios-container">
+            <p class="loading">Cargando usuarios...</p>
+          </div>
+        </div>
+
+        <div id="controlUsuarios" class="tab-content">
+          <div class="tab-header">
+            <h2>Control de Usuarios y Roles</h2>
+            <button class="btn-refresh" onclick="cargarControlUsuarios()">
+              <i class="fas fa-sync"></i> Actualizar
+            </button>
+          </div>
+          <div id="controlUsuariosContainer" class="usuarios-container">
+            <p class="loading">Cargando usuarios...</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal para ver mensaje -->
+  <div id="modalMensaje" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal()">&times;</span>
+      <h2>Detalle del Contacto</h2>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="js/scroll-reveal.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/cursor.js"></script>
+</body>
+</html>

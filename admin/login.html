@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin LopezTop | Login</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/images/lopeztop-removebg-preview.png"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="login-container">
+      <div id="loginBox" class="login-box">
+        <div class="login-header">
+          <a href="index.html">
+            <img src="/assets/images/top2.png" alt="Logo" class="brand-img"
+          /></a>
+          <p>Panel Administrativo</p>
+        </div>
+
+        <form id="loginForm" class="login-form">
+          <div class="form-group">
+            <label for="correo">Correo:</label>
+            <input
+              type="email"
+              id="correo"
+              placeholder="tu@email.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="contraseña">Contraseña:</label>
+            <input
+              type="password"
+              id="contraseña"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+          <button type="submit" class="btn-login">Ingresar</button>
+        </form>
+        <button
+          onclick="window.location.href = '../index.html'"
+          class="btn-volver"
+          style="margin-top: 20px"
+        >
+          <i class="fa fa-arrow-left"></i> Volver al inicio
+        </button>
+
+        <button onclick="abrirWebmail()" class="btn-mail btn-volver">
+          <i class="fa fa-envelope"></i> Correo empresarial
+        </button>
+
+        <p class="login-footer">
+          ¿No tienes cuenta?
+          <a href="#" onclick="mostrarRegistro(event)">Regístrate aquí</a>
+        </p>
+        <p class="login-footer login-links">
+          <a href="#" onclick="mostrarCambioContrasena(event)">Cambiar contraseña</a>
+          <a href="#" onclick="mostrarRecuperacion(event)">¿Olvidaste tu clave?</a>
+        </p>
+      </div>
+
+      <div id="registroBox" class="login-box" style="display: none">
+        <div class="login-header">
+          <img
+            src="/assets/images/top2.png"
+            alt="Logo"
+            class="brand-img"
+            href="index.html"
+          />
+          <p>Registro de Usuario</p>
+        </div>
+
+        <form id="registroForm" class="login-form">
+          <div class="form-group">
+            <label for="regNombre">Nombre Completo:</label>
+            <input
+              type="text"
+              id="regNombre"
+              placeholder="Tu nombre"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="regCorreo">Correo:</label>
+            <input
+              type="email"
+              id="regCorreo"
+              placeholder="tu@email.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="regContraseña">Contraseña:</label>
+            <input
+              type="password"
+              id="regContraseña"
+              placeholder="Mínimo 6 caracteres"
+              required
+            />
+          </div>
+          <button type="submit" class="btn-login">Registrarse</button>
+        </form>
+        <button
+          onclick="window.location.href = '../index.html'"
+          class="btn-volver"
+          style="margin-top: 20px"
+        >
+          <i class="fa fa-arrow-left"></i> Volver al inicio
+        </button>
+        <button onclick="abrirWebmail()" class="btn-mail btn-volver">
+          <i class="fa fa-envelope"></i> Correo empresarial
+        </button>
+
+        <p class="login-footer">
+          ¿Ya tienes cuenta?
+          <a href="#" onclick="mostrarLogin(event)">Inicia sesión</a>
+        </p>
+      </div>
+
+      <div id="cambioPasswordBox" class="login-box" style="display: none">
+        <div class="login-header">
+          <img
+            src="/assets/images/top2.png"
+            alt="Logo"
+            class="brand-img"
+            href="index.html"
+          />
+          <p>Cambiar Contraseña</p>
+        </div>
+
+        <form id="cambioPasswordForm" class="login-form">
+          <div class="form-group">
+            <label for="changeCorreo">Correo:</label>
+            <input
+              type="email"
+              id="changeCorreo"
+              placeholder="tu@email.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="changeActual">Contraseña actual:</label>
+            <input
+              type="password"
+              id="changeActual"
+              placeholder="Tu contraseña actual"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="changeNueva">Nueva contraseña:</label>
+            <input
+              type="password"
+              id="changeNueva"
+              placeholder="Mínimo 6 caracteres"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="changeConfirmacion">Confirmar nueva contraseña:</label>
+            <input
+              type="password"
+              id="changeConfirmacion"
+              placeholder="Repite la nueva contraseña"
+              required
+            />
+          </div>
+          <button type="submit" class="btn-login">Actualizar contraseña</button>
+        </form>
+
+        <p class="login-footer">
+          <a href="#" onclick="mostrarLogin(event)">Volver al login</a>
+        </p>
+      </div>
+
+      <div id="recuperacionBox" class="login-box" style="display: none">
+        <div class="login-header">
+          <img
+            src="/assets/images/top2.png"
+            alt="Logo"
+            class="brand-img"
+            href="index.html"
+          />
+          <p>Recuperación de Contraseña</p>
+        </div>
+
+        <form id="recuperacionForm" class="login-form">
+          <div class="form-group">
+            <label for="recoveryCorreo">Correo:</label>
+            <input
+              type="email"
+              id="recoveryCorreo"
+              placeholder="tu@email.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="recoveryNueva">Nueva contraseña:</label>
+            <input
+              type="password"
+              id="recoveryNueva"
+              placeholder="Mínimo 6 caracteres"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="recoveryConfirmacion">Confirmar nueva contraseña:</label>
+            <input
+              type="password"
+              id="recoveryConfirmacion"
+              placeholder="Repite la nueva contraseña"
+              required
+            />
+          </div>
+          <p class="login-note">
+            Esta recuperación restablece la contraseña directamente con el correo registrado.
+          </p>
+          <button type="submit" class="btn-login">Restablecer contraseña</button>
+        </form>
+
+        <p class="login-footer">
+          <a href="#" onclick="mostrarLogin(event)">Volver al login</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+    <script src="../js/cursor.js"></script>
+  </body>
+</html>

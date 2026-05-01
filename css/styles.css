@@ -44,6 +44,7 @@ header {
   height: 100px;
   width: 200px;
   display: block;
+  
 }
 
 /* Navegación Desktop - BOTONES A LA DERECHA */
@@ -267,9 +268,132 @@ button:hover,
   background: url("../assets/images/topo.jpg") center/cover no-repeat;
 }
 
+/* SERVICIOS DETALLADO */
+.services-detail {
+  margin-top: 50px;
+  text-align: left;
+}
+
+.service-group {
+  background: rgba(42, 127, 146, 0.3);
+  padding: 30px;
+  margin: 20px 0;
+  border-left: 4px solid var(--color-acento);
+  border-radius: 5px;
+}
+
+.service-group h3 {
+  color: var(--color-acento);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.service-group p {
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.service-subgroup {
+  margin-top: 20px;
+  padding-left: 20px;
+  border-left: 2px solid var(--color-secundario);
+}
+
+.service-subgroup h4 {
+  color: var(--color-secundario);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.service-subgroup p {
+  margin-bottom: 15px;
+}
+
 /* NOSOTROS */
 .nosotros {
   padding: 100px 10%;
+}
+
+.nosotros-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.nosotros-content h2 {
+  font-size: 35px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.nosotros-content h2 span {
+  color: var(--color-acento);
+}
+
+.nosotros-intro {
+  font-size: 1.2rem;
+  color: var(--color-secundario);
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.nosotros-text {
+  margin: 40px 0;
+}
+
+.nosotros-text p {
+  line-height: 1.9;
+  margin-bottom: 25px;
+  text-align: justify;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.nosotros-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+
+#cursorCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+
+.value-item {
+  background: rgba(15, 76, 92, 0.5);
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  border-top: 3px solid var(--color-acento);
+  transition: 0.3s;
+}
+
+.value-item:hover {
+  transform: translateY(-5px);
+  background: rgba(42, 127, 146, 0.6);
+}
+
+.value-item i {
+  font-size: 2rem;
+  color: var(--color-acento);
+  margin-bottom: 15px;
+}
+
+.value-item h4 {
+  margin: 15px 0;
+  font-size: 1.2rem;
+}
+
+.value-item p {
+  opacity: 0.8;
+  font-size: 0.95rem;
 }
 
 .nosotros-container {
@@ -550,7 +674,8 @@ footer {
 
   .cards,
   .bar-container,
-  .nosotros-container {
+  .nosotros-container,
+  .nosotros-values {
     flex-direction: column;
   }
 
@@ -576,6 +701,16 @@ footer {
 
   .nosotros {
     padding: 60px 5%;
+  }
+
+  .service-group {
+    padding: 20px;
+    margin: 15px 0;
+  }
+
+  .nosotros-values {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .form-map {

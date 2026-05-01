@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
 
     <!-- SEO PRINCIPAL -->
-    <title>LopezTop | Topografía | Drones y Escaneo Láser 3D</title>
+    <title>LopezTop | Topografía | Drones | Ingenieria</title>
     <meta
       name="description"
       content="Empresa de topografía en Medellín especializada en levantamientos topográficos, escaneo láser 3D y fotogrametría con drones. Cotiza tu proyecto hoy mismo."
@@ -30,6 +30,7 @@
 
     <!-- Estilos -->
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/scroll-reveal.css" />
 
     <!-- Iconos -->
     <link
@@ -43,6 +44,7 @@
       rel="stylesheet"
     />
   </head>
+  <canvas id="cursorCanvas"></canvas>
   <body>
     <header>
       <div class="container nav">
@@ -54,23 +56,25 @@
             href="index.html"
           />
         </div>
-        <div>
-          <div class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
 
         <nav>
           <a href="index.html">Inicio</a>
           <a href="#servicios">Servicios</a>
-          <a href="#nosotros">Nosotros</a>
+          <a href="index.html#nosotros">Nosotros</a>
+          <a href="#">Proyectos</a>
           <a href="contacto.html">Contacto</a>
-          <a href="#contacto" class="btn-nav">Cotiza Ahora</a>
+          <a href="contacto.html#contacto" class="btn-nav">Cotiza Ahora</a>
+          <a href="admin/login.html" style="font-size: 0.8rem; opacity: 0.6;">Admin</a>
         </nav>
       </div>
     </header>
+
 
     <section class="hero">
       <video autoplay muted loop playsinline class="video-bg">
@@ -93,19 +97,19 @@
           </h3>
         </div>
         <div class="card-info">
-          <div>
+          <div class="scroll-reveal reveal-slide-left">
             <i class="fas fa-map-marker-alt fa-2x"></i>
             <h4 class="line-break">Dirección</h4>
             <p class="line-break">Calle 1 # 2 - 34</p>
             <p>Medellin, Antioquia</p>
           </div>
-          <div>
+          <div class="scroll-reveal reveal-slide-up">
             <i class="fas fa-mobile-alt fa-2x"></i>
             <h4 class="line-break">Teléfono</h4>
             <p class="line-break">Oficina: 123 456 7890</p>
             <p>Personal: 555 777 8989</p>
           </div>
-          <div>
+          <div class="scroll-reveal reveal-slide-right">
             <i class="fas fa-envelope fa-2x"></i>
             <h4 class="line-break">Email</h4>
             <p class="line-break">Oficina: hola@gmail.com</p>
@@ -115,36 +119,45 @@
       </section>
       <section class="section">
         <div class="form-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126910.75624036336!2d-75.67879317498294!3d6.26884221129856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428ef4e52dddb%3A0x722fd6c39270ac72!2sMedell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses-419!2sco!4v1771897320949!5m2!1ses-419!2sco"
-            width="600"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-          <form class="box-form">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1382818925986!2d-75.6306309242552!3d6.245501326329893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442a2c18736971%3A0xd1701348c886d843!2sCl.%2034a%20%23%20116-80%2C%20El%20Corazon%2C%20Medell%C3%ADn%2C%20San%20Javier%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses-419!2sco!4v1776826351772!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <form class="box-form" id="contactForm">
             <input
               type="text"
               placeholder="Nombre completo"
+              id="nombre"
               class="input-form"
+              required
             />
-            <input type="email" placeholder="Email" class="input-form" />
+            <input
+              type="email"
+              placeholder="Email"
+              id="correo"
+              class="input-form"
+              required
+            />
+            <input
+              type="tel"
+              placeholder="Celular"
+              id="celular"
+              class="input-form"
+              required
+            />
             <textarea
               name="message"
-              id=""
+              id="mensaje"
               cols="30"
               rows="10"
               placeholder="Deja tu mensaje..."
               class="input-form"
+              required
             ></textarea>
-            <button class="btn">Enviar</button>
+            <button type="button" class="btn" id="enviarBtn">Enviar</button>
           </form>
         </div>
       </section>
     </main>
 
+    <script src="js/scroll-reveal.js"></script>
     <footer class="main-footer">
       <div class="copy">
         <p>LopezTop 2026 COPYRIGHT &copy;</p>
@@ -168,5 +181,7 @@
       </div>
     </footer>
     <script src="js/button_burguer.js"></script>
+    <script src="js/contacto.js"></script>
+    <script src="js/cursor.js"></script>
   </body>
 </html>
