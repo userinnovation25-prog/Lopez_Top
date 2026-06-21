@@ -1,49 +1,51 @@
 require('dotenv').config();
+const path = require('path');
 const express = require('express');
 const connectDB = require('./config/database');
 
-// Importar configuración centralizada
 const config = require('./config/env');
 const corsOptions = require('./config/cors');
 
-// Importar rutas
 const authRoutes = require('./routes/authRoutes');
 const contactoRoutes = require('./routes/contactoRoutes');
 
-// Importar middlewares
 const { errorHandler, notFoundHandler } = require('./middlewares/errorHandler');
 
-// Inicializar Express
 const app = express();
 
-// ============================================
-// CONECTAR BASE DE DATOS
-// ============================================
 connectDB();
 
-// ============================================
-// MIDDLEWARES DE APLICACIÓN
-// ============================================
-
-// Parsear JSON
 app.use(express.json());
-
-// Parsear URL-encoded
 app.use(express.urlencoded({ extended: true }));
 
-// CORS - Configurado desde config/cors.js
 const cors = require('cors');
 app.use(cors(corsOptions));
 
-// Servir archivos estáticos
-app.use(express.static('public'));
+const blockedPaths = [
+  '/config',
+  '/controllers',
+  '/models',
+  '/routes',
+  '/services',
+  '/middlewares',
+  '/utils',
+  '/node_modules',
+  '/.env',
+  '/server.js',
+  '/seed.js',
+  '/package.json',
+  '/package-lock.json'
+];
 
-// ============================================
-// RUTAS
-// ============================================
+app.use((req, res, next) => {
+  const requestPath = req.path.toLowerCase();
+  if (blockedPaths.some((blockedPath) => requestPath.startsWith(blockedPath))) {
+    return res.status(404).end();
+  }
+  next();
+});
 
-// Health check
-app.get('/', (req, res) => {
+app.get('/api/health', (req, res) => {
   res.json({
     mensaje: 'Servidor LopezTop está funcionando',
     version: '2.0.0',
@@ -52,28 +54,35 @@ app.get('/', (req, res) => {
   });
 });
 
-// API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/contactos', contactoRoutes);
 
-// ============================================
-// MANEJO DE ERRORES
-// ============================================
+app.use('/css', express.static(path.join(__dirname, 'css')));
+app.use('/js', express.static(path.join(__dirname, 'js')));
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use('/admin', express.static(path.join(__dirname, 'admin')));
 
-// Rutas no encontradas (404)
+const htmlPages = {
+  '/': 'index.html',
+  '/index.html': 'index.html',
+  '/contacto.html': 'contacto.html',
+  '/proyectos.html': 'proyectos.html'
+};
+
+Object.entries(htmlPages).forEach(([route, fileName]) => {
+  app.get(route, (req, res) => {
+    res.sendFile(path.join(__dirname, fileName));
+  });
+});
+
 app.use(notFoundHandler);
-
-// Middleware centralizado de errores (DEBE ir al final)
 app.use(errorHandler);
-
-// ============================================
-// INICIAR SERVIDOR
-// ============================================
 
 const PORT = config.app.port;
 
-app.listen(PORT, () => {
-  console.log(`
+if (!process.env.VERCEL && require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`
 ╔════════════════════════════════════════╗
 ║     LOPEZTOP SERVER INICIADO     ║
 ╠════════════════════════════════════════╣
@@ -82,18 +91,22 @@ app.listen(PORT, () => {
 ║ Node Version:    ${process.version}
 ║ Timestamp:       ${new Date().toLocaleString('es-CO')}
 ╚════════════════════════════════════════╝
-  `);
-});
+    `);
+  });
+}
 
-// Manejo de errores no capturados
 process.on('unhandledRejection', (err) => {
   console.error(' UNHANDLED REJECTION:', err);
-  process.exit(1);
+  if (!process.env.VERCEL) {
+    process.exit(1);
+  }
 });
 
 process.on('uncaughtException', (err) => {
   console.error(' UNCAUGHT EXCEPTION:', err);
-  process.exit(1);
+  if (!process.env.VERCEL) {
+    process.exit(1);
+  }
 });
 
 module.exports = app;

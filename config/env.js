@@ -3,7 +3,7 @@
  * Asegura que todas las variables requeridas estén definidas
  */
 
-const requiredEnvVars = ['MONGODB_URI', 'JWT_SECRET', 'PORT'];
+const requiredEnvVars = ['MONGODB_URI', 'JWT_SECRET'];
 const optionalEnvVars = ['NODE_ENV', 'CORS_ORIGIN', 'LOG_LEVEL'];
 
 // Validar variables obligatorias
@@ -46,7 +46,7 @@ const config = {
   cors: {
     origin: process.env.CORS_ORIGIN 
       ? process.env.CORS_ORIGIN.split(',').map(o => o.trim())
-      : ['http://localhost:3000', 'http://localhost:5173', 'http://localhost:8000'],
+      : ['http://localhost:3000', 'http://localhost:5173', 'http://localhost:8000', 'http://127.0.0.1:5501'],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
