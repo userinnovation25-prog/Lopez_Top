@@ -21,11 +21,5 @@
       "src": "assets/**",
       "use": "@vercel/static"
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "server.js"
-    }
   ]
 }
