@@ -64,12 +64,11 @@ app.use('/admin', express.static(path.join(__dirname, 'admin')));
 
 console.log("DIRNAME:", __dirname);
 
-const fs = require("fs");
+const fs = require('fs');
 
-console.log(
-  "INDEX EXISTS:",
-  fs.existsSync(path.join(__dirname, "index.html"))
-);
+console.log('INDEX EXISTS:', fs.existsSync(path.join(__dirname, 'index.html')));
+console.log('CONTACTO EXISTS:', fs.existsSync(path.join(__dirname, 'contacto.html')));
+console.log('PROYECTOS EXISTS:', fs.existsSync(path.join(__dirname, 'proyectos.html')));
 
 const htmlPages = {
   '/': 'index.html',
