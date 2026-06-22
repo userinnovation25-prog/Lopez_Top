@@ -22,8 +22,14 @@
       "use": "@vercel/static"
     },
     {
-  "src": "admin/**",
-  "use": "@vercel/static"
-}
+      "src": "admin/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/server.js"
+    }
   ]
 }
