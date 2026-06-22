@@ -62,6 +62,15 @@ app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use('/admin', express.static(path.join(__dirname, 'admin')));
 
+console.log("DIRNAME:", __dirname);
+
+const fs = require("fs");
+
+console.log(
+  "INDEX EXISTS:",
+  fs.existsSync(path.join(__dirname, "index.html"))
+);
+
 const htmlPages = {
   '/': 'index.html',
   '/index.html': 'index.html',
