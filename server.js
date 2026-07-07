@@ -62,6 +62,10 @@ app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use('/admin', express.static(path.join(__dirname, 'admin')));
 
+app.get(['/robots.txt', '/sitemap.xml', '/site.webmanifest'], (req, res) => {
+  res.sendFile(path.join(__dirname, req.path));
+});
+
 console.log("DIRNAME:", __dirname);
 
 const fs = require('fs');

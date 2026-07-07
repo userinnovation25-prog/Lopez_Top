@@ -110,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     image.src = service.image;
     image.alt = service.imageAlt;
     image.loading = "lazy";
+    image.decoding = "async";
 
     const content = document.createElement("span");
     content.className = "service-card__content";

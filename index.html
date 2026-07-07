@@ -1,25 +1,43 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-CO">
   <head>
     <meta charset="UTF-8" />
 
     <!-- SEO PRINCIPAL -->
-    <title>LopezTop | Topografía | Drones | Ingenieria</title>
+    <title>Empresa de Topografía en Colombia | Drones y Obras Civiles | LopezTop S.A.S.</title>
     <meta
       name="description"
-      content="Empresa de topografía en Medellín especializada en levantamientos topográficos, escaneo láser 3D y fotogrametría con drones. Cotiza tu proyecto hoy mismo."
+      content="LopezTop S.A.S. ofrece servicios topográficos en Colombia: levantamientos topográficos, topografía con dron, georreferenciación, replanteo, escaneo láser 3D y topografía para obras civiles."
+    />
+    <meta
+      name="keywords"
+      content="empresa de topografía, servicios topográficos, levantamientos topográficos, topografía con dron, georreferenciación, replanteo, topografía para construcción, topografía para minería, topografía para obras civiles, topografía en Colombia"
     />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="LopezTop" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0A2E36" />
+    <link rel="canonical" href="https://www.lopeztop.com.co/" />
 
     <!-- Open Graph (Redes Sociales) -->
-    <meta property="og:title" content="Topografía en Medellín | LopezTop" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="LopezTop S.A.S." />
+    <meta property="og:title" content="Empresa de Topografía en Colombia | LopezTop S.A.S." />
     <meta
       property="og:description"
-      content="Servicios profesionales de topografía y fotogrametría con drones en Medellín."
+      content="Servicios profesionales de topografía, fotogrametría con drones, georreferenciación, replanteo y obras civiles en Colombia."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.lopeztop.com.co/" />
+    <meta property="og:image" content="https://www.lopeztop.com.co/assets/images/top2.png" />
+    <meta property="og:image:alt" content="Logo de LopezTop S.A.S." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Empresa de Topografía en Colombia | LopezTop S.A.S." />
+    <meta
+      name="twitter:description"
+      content="Levantamientos topográficos, topografía con dron, georreferenciación y replanteo para construcción, minería y obras civiles."
+    />
+    <meta name="twitter:image" content="https://www.lopeztop.com.co/assets/images/top2.png" />
 
     <!-- Favicon -->
     <link
@@ -27,6 +45,12 @@
       type="image/png"
       href="assets/images/lopeztop-removebg-preview.png"
     />
+    <link rel="apple-touch-icon" href="assets/images/lopeztop-removebg-preview.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preload" as="image" href="assets/images/top2.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
 
     <!-- Estilos -->
     <link rel="stylesheet" href="css/styles.css" />
@@ -43,40 +67,98 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
       rel="stylesheet"
     />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+            "@id": "https://www.lopeztop.com.co/#organization",
+            "name": "LopezTop S.A.S.",
+            "url": "https://www.lopeztop.com.co/",
+            "logo": "https://www.lopeztop.com.co/assets/images/top2.png",
+            "image": "https://www.lopeztop.com.co/assets/images/top2.png",
+            "email": "info@lopeztop.com.co",
+            "telephone": "+57 302 427 8510",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Calle 34A #116-80",
+              "addressLocality": "Medellín",
+              "addressRegion": "Antioquia",
+              "addressCountry": "CO"
+            },
+            "areaServed": "Colombia",
+            "priceRange": "$$",
+            "sameAs": ["https://web.facebook.com/lopeztop07?locale=es_LA"],
+            "knowsAbout": [
+              "levantamientos topográficos",
+              "topografía con dron",
+              "georreferenciación",
+              "replanteo",
+              "topografía para construcción",
+              "topografía para minería",
+              "topografía para obras civiles"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.lopeztop.com.co/#website",
+            "url": "https://www.lopeztop.com.co/",
+            "name": "LopezTop S.A.S.",
+            "publisher": { "@id": "https://www.lopeztop.com.co/#organization" },
+            "inLanguage": "es-CO"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.lopeztop.com.co/#webpage",
+            "url": "https://www.lopeztop.com.co/",
+            "name": "Empresa de Topografía en Colombia | LopezTop S.A.S.",
+            "description": "Servicios topográficos profesionales para construcción, minería, obras civiles y proyectos territoriales en Colombia.",
+            "isPartOf": { "@id": "https://www.lopeztop.com.co/#website" },
+            "about": { "@id": "https://www.lopeztop.com.co/#organization" }
+          }
+        ]
+      }
+    </script>
   </head>
-  <canvas id="cursorCanvas"></canvas>
   <body>
+    <canvas id="cursorCanvas" aria-hidden="true"></canvas>
     <header>
       <div class="container nav">
         <div class="brand">
-          <img
-            src="assets/images/top2.png"
-            alt="Logo"
-            class="brand-img"
-            href="index.html"
-          />
+          <a href="index.html" aria-label="Ir al inicio de LopezTop">
+            <img
+              src="assets/images/top2.png"
+              alt="Logo LopezTop S.A.S."
+              class="brand-img"
+              width="500"
+              height="279"
+              decoding="async"
+            />
+          </a>
         </div>
 
-        <div class="menu-toggle">
+        <div class="menu-toggle" role="button" tabindex="0" aria-label="Abrir menú de navegación" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
         </div>
 
-        <nav>
+        <nav aria-label="Navegación principal">
           <a href="index.html">Inicio</a>
           <a href="#servicios">Servicios</a>
           <a href="#nosotros">Nosotros</a>
           <a href="proyectos.html">Proyectos</a>
           <a href="contacto.html">Contacto</a>
-          <a href="#" onclick="window.open('https://wa.me/573024278510', '_blank'); return false;" class="btn-nav">Cotiza Ahora</a>
+          <a href="#" onclick="window.open('https://wa.me/573024278510', '_blank', 'noopener,noreferrer'); return false;" class="btn-nav">Cotiza Ahora</a>
           <a href="admin/login.html" style="font-size: 0.8rem; opacity: 0.6;">Admin</a>
         </nav>
       </div>
     </header>
 
+    <main>
     <section class="hero">
-      <video autoplay muted loop playsinline class="video-bg">
+      <video autoplay muted loop playsinline preload="metadata" poster="assets/images/hero.jpg" class="video-bg" aria-hidden="true">
         <source src="assets/video/v3.mp4" type="video/mp4" />
       </video>
       <div class="hero-overlay">
@@ -149,6 +231,7 @@
         </div>
       </div>
     </section>
+    </main>
 
 
     <footer class="main-footer">
@@ -156,17 +239,17 @@
         <p>LopezTop 2026 COPYRIGHT &copy;</p>
         <ul class="footer-social">
           <li>
-            <a href="https://www.facebook.com/?locale=es_LA" target="_blank"
+            <a href="https://web.facebook.com/lopeztop07?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Facebook de LopezTop"
               ><i class="fab fa-facebook"></i
             ></a>
           </li>
           <li>
-            <a href="https://www.youtube.com/" target="_blank"
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube de LopezTop"
               ><i class="fab fa-youtube"></i
             ></a>
           </li>
           <li>
-            <a href="https://www.instagram.com/?hl=es" target="_blank"
+            <a href="https://www.instagram.com/?hl=es" target="_blank" rel="noopener noreferrer" aria-label="Instagram de LopezTop"
               ><i class="fab fa-instagram"></i
             ></a>
           </li>

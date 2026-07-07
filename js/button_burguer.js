@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     menuToggle.classList.toggle("active");
     nav.classList.toggle("active");
     overlay.classList.toggle("active");
+    menuToggle.setAttribute("aria-expanded", String(nav.classList.contains("active")));
     document.body.style.overflow = nav.classList.contains("active")
       ? "hidden"
       : "";
@@ -26,11 +27,18 @@ document.addEventListener("DOMContentLoaded", function () {
     menuToggle.classList.remove("active");
     nav.classList.remove("active");
     overlay.classList.remove("active");
+    menuToggle.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
   }
 
   // Click en hamburguesa
   menuToggle.addEventListener("click", toggleMenu);
+  menuToggle.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleMenu();
+    }
+  });
 
   // Click en overlay
   overlay.addEventListener("click", closeMenu);
@@ -48,6 +56,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Navegar después de cerrar el menú
       setTimeout(() => {
+        if (!href || href === "#") {
+          return;
+        }
+
         if (href.startsWith("#")) {
           // Es un ancla interna
           const target = document.querySelector(href);

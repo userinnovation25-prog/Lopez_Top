@@ -1,0 +1,19 @@
+{
+  "name": "LopezTop S.A.S.",
+  "short_name": "LopezTop",
+  "description": "Servicios topográficos profesionales en Colombia.",
+  "lang": "es-CO",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#081428",
+  "theme_color": "#0A2E36",
+  "icons": [
+    {
+      "src": "/assets/images/lopeztop-removebg-preview.png",
+      "sizes": "408x612",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1153,6 +1153,146 @@ footer {
   animation-delay: 0.4s;
 }
 
+.projects-showcase {
+  max-width: 1100px;
+  padding: 46px;
+}
+
+.projects-showcase__intro {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.projects-carousel {
+  width: 100%;
+  margin: 0 auto 30px;
+}
+
+.projects-carousel__viewport {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  background: rgba(8, 20, 40, 0.42);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.projects-carousel__track {
+  display: flex;
+  transform: translateX(0);
+  transition: transform 0.55s ease;
+  will-change: transform;
+}
+
+.projects-carousel__slide {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(280px, 1.1fr);
+  align-items: stretch;
+  min-height: 390px;
+  text-align: left;
+}
+
+.projects-carousel__slide img {
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  object-fit: contain;
+  padding: 34px;
+  background:
+    radial-gradient(circle at top left, rgba(42, 127, 146, 0.28), transparent 38%),
+    rgba(255, 255, 255, 0.94);
+}
+
+.projects-carousel__caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  padding: 42px;
+  background: linear-gradient(145deg, rgba(10, 46, 54, 0.82), rgba(8, 20, 40, 0.86));
+}
+
+.projects-carousel__caption span {
+  width: fit-content;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(193, 18, 31, 0.16);
+  color: var(--color-acento);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.projects-carousel__caption h2 {
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  line-height: 1.1;
+}
+
+.projects-carousel__caption p {
+  max-width: 460px;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.75;
+}
+
+.projects-carousel__controls {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr) 46px;
+  align-items: center;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.projects-carousel__button {
+  width: 46px;
+  height: 46px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(42, 127, 146, 0.38);
+  color: var(--color-blanco);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.projects-carousel__button:hover {
+  transform: translateY(-2px);
+  background: var(--color-acento);
+}
+
+.projects-carousel__button:focus-visible,
+.projects-carousel__dot:focus-visible {
+  outline: 3px solid var(--color-acento);
+  outline-offset: 4px;
+}
+
+.projects-carousel__dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.projects-carousel__dot {
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.34);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    width 0.3s ease;
+}
+
+.projects-carousel__dot.is-active {
+  width: 30px;
+  border-radius: 999px;
+  background: var(--color-acento);
+}
+
 nav a.nav-active {
   color: var(--color-fondo);
   background: var(--color-acento);
@@ -1205,5 +1345,64 @@ nav a.nav-active {
   .coming-soon__actions .btn-secondary {
     width: 100%;
     justify-content: center;
+  }
+
+  .projects-showcase {
+    padding: 34px 20px;
+  }
+
+  .projects-carousel__slide {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .projects-carousel__slide img {
+    min-height: 250px;
+    aspect-ratio: 16 / 10;
+    padding: 28px;
+  }
+
+  .projects-carousel__caption {
+    padding: 28px 22px 30px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .projects-carousel__caption p {
+    max-width: 100%;
+  }
+
+  .projects-carousel__controls {
+    grid-template-columns: 42px minmax(0, 1fr) 42px;
+    gap: 12px;
+  }
+
+  .projects-carousel__button {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-carousel__slide img {
+    min-height: 210px;
+    padding: 22px;
+  }
+
+  .projects-carousel__caption h2 {
+    font-size: 1.55rem;
+  }
+
+  .projects-carousel__caption span {
+    max-width: 100%;
+    line-height: 1.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-carousel__track,
+  .projects-carousel__button,
+  .projects-carousel__dot {
+    transition: none;
   }
 }
