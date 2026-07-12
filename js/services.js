@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       title: "Topografía Terrestre",
       tagline: "Medición precisa para proyectos e inmuebles",
-      image: "assets/images/topo.jpg",
+      image: "assets/images/topografia_terrestre.png",
       imageAlt: "Equipo de topografía terrestre en campo",
       description:
         "Realizamos levantamientos topográficos de alta precisión para proyectos de infraestructura, certificación de terrenos, desarrollo urbano y gestión predial. Nuestro equipo técnico entrega información clara, confiable y lista para respaldar decisiones de diseño, construcción y trámite.",
@@ -27,14 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             Nuestro equipo técnico trabaja con tecnología de alta precisión y metodologías actualizadas, permitiendo optimizar tiempos de ejecución, minimizar errores en campo y asegurar el correcto desarrollo de las obras.
             En LOPEZTOP S.A.S. entendemos que la infraestructura vial es clave para el desarrollo y la conectividad de las regiones. Por eso ofrecemos información topográfica confiable que respalda decisiones técnicas y contribuye a la construcción de vías seguras, eficientes y duraderas.`,
         },
-        {
-          title: "Actualización y Certificado de Áreas",
-          description:
-            `En LOPEZTOP S.A.S. ofrecemos el servicio de actualización y certificación de áreas, orientado a determinar con precisión las dimensiones reales de un predio o terreno, garantizando información confiable para trámites legales, técnicos y administrativos.
-            Realizamos levantamientos topográficos detallados, verificación de linderos y procesamiento de la información para emitir planos y certificados de área que respaldan procesos como compraventa de predios, subdivisiones, trámites notariales, actualizaciones catastrales y procesos ante entidades públicas o privadas.
-            Nuestro trabajo se desarrolla con equipos de alta precisión y metodologías técnicas confiables, asegurando que los resultados reflejen fielmente las características del terreno y cumplan con los requisitos establecidos por la normativa vigente.
-            En LOPEZTOP S.A.S brindamos claridad y seguridad sobre la información de su propiedad, entregando documentación técnica precisa que respalda sus decisiones y trámites con total confianza.`,
-        },
+        
         {
           title: "Parcelaciones",
           description:
@@ -49,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       title: "Construcción Civil",
       tagline: "Control topográfico para obra",
-      image: "assets/images/topo.jpg",
+      image: "assets/images/construccion_civil.png",
       imageAlt: "Topografía aplicada a construcción civil",
       description: `Ofrecemos servicios profesionales de construcción civil, garantizando calidad, resistencia y cumplimiento en los tiempos de obra.
 
@@ -62,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       title: "Seguridad y Salud en el Trabajo (SST)",
       tagline: "Servicios de Seguridad y Salud en el Trabajo",
-      image: "assets/images/sst.jpg",
+      image: "assets/images/SG-SST.png",
       imageAlt: "Evaluación técnica de condiciones del terreno",
       description: `Protege a tus trabajadores y cumple con la normativa vigente con un Sistema de Gestión de Seguridad y Salud en el Trabajo (SG-SST) bien implementado.
       Ofrecemos asesoría profesional para empresas de construcción, industria y comercio, enfocándonos en la prevención de riesgos laborales, el cumplimiento legal y el bienestar del personal.
@@ -76,13 +69,16 @@ document.addEventListener("DOMContentLoaded", () => {
       • Acompañamiento en auditorías y cumplimiento normativo`,
     },
     {
-      title: "Escaneo Láser 3D",
-      tagline: "Nubes de puntos para análisis avanzado",
-      image: "assets/images/escaneo-laser.jpg",
-      imageAlt: "Escaneo láser 3D aplicado a levantamientos técnicos",
+      title: "Actualización y Certificado de Áreas",
+      tagline: "Precisión que respalda su propiedad",
+      image: "assets/images/certificados_areas.png",
+      imageAlt: "Certificacion de areas",
       description:
-        "Tecnología Lider de última generación para capturar geometría completa de estructuras, edificios y terrenos. Generamos nubes de puntos de altísima densidad que permiten análisis detallados, modelado BIM y documentación precisa de activos. Perfecto para relevamientos de edificios históricos, inspección de infraestructuras críticas y análisis volumétricos.",
-    },
+        `En LOPEZTOP S.A.S. ofrecemos el servicio de actualización y certificación de áreas, orientado a determinar con precisión las dimensiones reales de un predio o terreno, garantizando información confiable para trámites legales, técnicos y administrativos.
+            Realizamos levantamientos topográficos detallados, verificación de linderos y procesamiento de la información para emitir planos y certificados de área que respaldan procesos como compraventa de predios, subdivisiones, trámites notariales, actualizaciones catastrales y procesos ante entidades públicas o privadas.
+            Nuestro trabajo se desarrolla con equipos de alta precisión y metodologías técnicas confiables, asegurando que los resultados reflejen fielmente las características del terreno y cumplan con los requisitos establecidos por la normativa vigente.
+            En LOPEZTOP S.A.S brindamos claridad y seguridad sobre la información de su propiedad, entregando documentación técnica precisa que respalda sus decisiones y trámites con total confianza.`,
+        },
   ];
 
   const servicesGrid = document.querySelector("#servicesGrid");
