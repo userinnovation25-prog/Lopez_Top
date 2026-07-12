@@ -592,6 +592,34 @@ body.modal-open {
   width: 400px;
 }
 
+.btn_wsp {
+  display:inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #25D366;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(37, 211,102,0.35);
+  margin-top: 20px;
+}
+
+.btn_wsp:hover{
+  background-color: #1EBE5D;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37,211,102,0.45);
+}
+
+.btn_wsp i{
+  font-size: 20px;
+}
+
 form {
   display: flex;
   flex-direction: column;
