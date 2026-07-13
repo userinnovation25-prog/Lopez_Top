@@ -655,6 +655,7 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 10px;
+  text-decoration: none;
 }
 
 .footer-social li i {
@@ -681,14 +682,32 @@ footer {
   align-items: center;
 }
 
-.main-footer .copy {
-  width: 100%;
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.main-footer .copy{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.creator_logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: auto;
+}
+
+.creator_logo p{
+    margin: 0;
+    font-size: 14px;
+    color: #fff;
+}
+
+.creator_logo img{
+    width: 170px;
+    height: auto;
+    display: block;
 }
 
 /* contacto */
